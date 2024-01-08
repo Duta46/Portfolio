@@ -4,10 +4,10 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 // import leaf from "../../Assets/Projects/leaf.png";
 // import emotion from "../../Assets/Projects/emotion.png";
-// import editor from "../../Assets/Projects/codeEditor.png";
+import elearning from "../../Assets/Projects/E-learning.png";
 import simkvi from "../../Assets/Projects/proyek_1.png";
 // import suicide from "../../Assets/Projects/suicide.png";
-// import bitsOfCode from "../../Assets/Projects/blog.png";
+import ijts from "../../Assets/Projects/IJTS.png";
 
 function Projects() {
   return (
@@ -32,27 +32,27 @@ function Projects() {
             />
           </Col>
 
-          {/* <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={ijts}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              title="IJTS"
+              description="JFT Question Practice Application for students at Indonesian Japanese Friends LPK. This application was created using Laravel as the back end and front end, namely Tailwind CSS and Boostrap."
+              ghLink="https://github.com/Duta46/soal-sji"
+              demoLink="https://ijts.pt-sjigroup.com/"
             />
-          </Col> */}
+          </Col>
 
-          {/* <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={elearning}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              title="E-learning"
+              description="E-learning website based application, this application was created to fulfill the UTS assignment for the website programming course. This website was created using the CSS libraries, namely Boostrap and JQuery"
+              ghLink="https://github.com/Duta46/E-learning"
+              demoLink="https://e-learning-duta46.vercel.app/"              
             />
-          </Col> */}
+          </Col>
 
           {/* <Col md={4} className="project-card">
             <ProjectCard
