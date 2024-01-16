@@ -3,10 +3,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import AnimalCare from "../../Assets/Projects/AnimalCare.png";
-// import emotion from "../../Assets/Projects/emotion.png";
+import muvii from "../../Assets/Projects/Muvii.png";
 import elearning from "../../Assets/Projects/E-learning.png";
 import simkvi from "../../Assets/Projects/proyek_1.png";
-// import suicide from "../../Assets/Projects/suicide.png";
+import kelontong from "../../Assets/Projects/Kelontong.png";
 import ijts from "../../Assets/Projects/IJTS.png";
 
 function Projects() {
@@ -61,32 +61,28 @@ function Projects() {
               title="Animal Care"
               description="Website for animal care. This application was created using the CSS library, namely Bootstrap."
               ghLink="https://github.com/Duta46/AnimalCare.git"
-              // demoLink="https://plant49-ai.herokuapp.com/"
             />
           </Col>
 
-          {/* <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath={kelontong}
               isBlog={false}
-              title="Ai For Social Good"
+              title="Kelontong"
               description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
+              ghLink="https://github.com/Duta46/e-commerce_duta"
             />
-          </Col> */}
+          </Col>
 
-          {/* <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={emotion}
+              imgPath={muvii}
               isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
+              title="Muvii"
+              description="The online film streaming website uses premium user features to access films on the website and there is a payment feature using midtrans. This website was created using Laravel as the backend and also Tailwind for the user display and Boostrap for the admin dashboard display."
+              ghLink="https://github.com/Duta46/stream"
             />
-          </Col> */}
+          </Col>
         </Row>
       </Container>
     </Container>
