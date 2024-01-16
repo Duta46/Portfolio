@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-// import leaf from "../../Assets/Projects/leaf.png";
+import AnimalCare from "../../Assets/Projects/AnimalCare.png";
 // import emotion from "../../Assets/Projects/emotion.png";
 import elearning from "../../Assets/Projects/E-learning.png";
 import simkvi from "../../Assets/Projects/proyek_1.png";
@@ -26,7 +26,7 @@ function Projects() {
               imgPath={simkvi}
               isBlog={false}
               title="SIMKVI"
-              description="Monitoring the work of the head of study program at the Unesa vocational faculty"
+              description="Monitor the work of the head of the Unesa vocational faculty study program. This application uses Laravel as the backend, and Tailwind CSS and Boostrap as the front end."
               ghLink="https://github.com/Duta46/SIMKVI"
               demoLink="https://simkvi.mi.unesa.ac.id/login"
             />
@@ -54,16 +54,16 @@ function Projects() {
             />
           </Col>
 
-          {/* <Col md={4} className="project-card">
+          <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={leaf}
+              imgPath={AnimalCare}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="Animal Care"
+              description="Website for animal care. This application was created using the CSS library, namely Bootstrap."
+              ghLink="https://github.com/Duta46/AnimalCare.git"
+              // demoLink="https://plant49-ai.herokuapp.com/"
             />
-          </Col> */}
+          </Col>
 
           {/* <Col md={4} className="project-card">
             <ProjectCard
