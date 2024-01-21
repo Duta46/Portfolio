@@ -5,7 +5,6 @@ import {
   DiJavascript1,
   DiReact,
   DiNodejs,
-  DiMongodb,
   DiPython,
   DiGit,
   DiJava,
@@ -19,6 +18,7 @@ import {
   SiLaravel,
   // SiPostgresql,
 } from "react-icons/si";
+import { DiWordpress } from "react-icons/di";
 // import { TbBrandLaravel } from "react-icons/tb";
 
 function Techstack() {
@@ -43,7 +43,7 @@ function Techstack() {
         <SiTailwindcss />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
-        <DiMongodb />
+        <DiWordpress />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiNextdotjs />

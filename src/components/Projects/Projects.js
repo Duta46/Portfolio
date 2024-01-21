@@ -59,7 +59,7 @@ function Projects() {
               imgPath={AnimalCare}
               isBlog={false}
               title="Animal Care"
-              description="Website for animal care. This application was created using the CSS library, namely Bootstrap."
+              description="The extraordinary website interface for pet care. This application has been crafted with expertise using the renowned CSS library, Bootstrap, to provide a stunning and functional visual experience."
               ghLink="https://github.com/Duta46/AnimalCare.git"
             />
           </Col>
@@ -69,7 +69,7 @@ function Projects() {
               imgPath={kelontong}
               isBlog={false}
               title="Kelontong"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
+              description="Design an attractive and responsive e-commerce website using a combination of HTML for structure, CSS for design and layout, and JavaScript for interactivity."
               ghLink="https://github.com/Duta46/e-commerce_duta"
             />
           </Col>
