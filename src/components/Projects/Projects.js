@@ -8,6 +8,7 @@ import elearning from "../../Assets/Projects/E-learning.png";
 import simkvi from "../../Assets/Projects/proyek_1.png";
 import kelontong from "../../Assets/Projects/Kelontong.png";
 import ijts from "../../Assets/Projects/IJTS.png";
+import KITAPTN from "../../Assets/Projects/KITAPTN.png";
 
 function Projects() {
   return (
@@ -51,6 +52,17 @@ function Projects() {
               description="E-learning website based application, this application was created to fulfill the UTS assignment for the website programming course. This website was created using the CSS libraries, namely Boostrap and JQuery"
               ghLink="https://github.com/Duta46/E-learning"
               demoLink="https://e-learning-duta46.vercel.app/"              
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={KITAPTN}
+              isBlog={false}
+              title="KITAPTN"
+              description="This application is designed to help students prepare for admission to public universities. KITAPTN is built using the Laravel framework and Tailwind CSS for the user interface as well as the admin and user dashboards. The application also implements the Fisher-Yates Shuffle method to randomize questions when users begin their tasks."
+              ghLink="https://github.com/andarass/UTBK"
+              // demoLink="https://e-learning-duta46.vercel.app/"              
             />
           </Col>
 
