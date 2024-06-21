@@ -9,6 +9,7 @@ import simkvi from "../../Assets/Projects/proyek_1.png";
 import kelontong from "../../Assets/Projects/Kelontong.png";
 import ijts from "../../Assets/Projects/IJTS.png";
 import KITAPTN from "../../Assets/Projects/KITAPTN.png";
+import Japanify from "../../Assets/Projects/Japanify.png";
 
 function Projects() {
   return (
@@ -62,6 +63,17 @@ function Projects() {
               title="KITAPTN"
               description="This application is designed to help students prepare for admission to public universities. KITAPTN is built using the Laravel framework and Tailwind CSS for the user interface as well as the admin and user dashboards. The application also implements the Fisher-Yates Shuffle method to randomize questions when users begin their tasks."
               ghLink="https://github.com/andarass/UTBK"
+              // demoLink="https://e-learning-duta46.vercel.app/"              
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={Japanify}
+              isBlog={false}
+              title="Japanify"
+              description="The Japanify application was created to fulfill the requirements of my thesis. This application is a JLPT test simulation built with Laravel as the backend and Tailwind and Bootstrap as the frontend. Japanify offers various features, including practice questions, automated scoring, and result analysis to help users prepare for the JLPT exam more effectively. Additionally, the application is designed with a responsive and intuitive user interface, making it easy to use on various devices."
+              ghLink="https://github.com/Duta46/Japanify"
               // demoLink="https://e-learning-duta46.vercel.app/"              
             />
           </Col>
