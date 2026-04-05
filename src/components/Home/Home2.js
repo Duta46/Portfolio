@@ -1,10 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
-import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
-  // AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -30,16 +28,9 @@ function Home2() {
               <br />
               My field of Interest's are building new &nbsp;
               <i>
-                <b className="purple">Web Technologies and Products </b> 
-                {/* <br />
-                <br /> */}
-                 and  <b className="purple">Exploring New Tech and Products </b>
-                 would be nice instead building it from scratch
-                {/* and
-                also in areas related to{" "}
-                <b className="purple">
-                  Blockchain.
-                </b> */}
+                <b className="purple">Web Technologies and Products </b>
+                and <b className="purple"> Exploring New Tech and Products </b>
+                would be nice instead building it from scratch
               </i>
               <br />
               <br />
@@ -56,12 +47,15 @@ function Home2() {
               </i>
             </p>
           </Col>
+
           <Col md={4} className="myAvtar">
-            <Tilt>
+            {/* ❌ HAPUS Tilt */}
+            <div>
               <img src={myImg} className="img-fluid" alt="avatar" />
-            </Tilt>
+            </div>
           </Col>
         </Row>
+
         <Row>
           <Col md={12} className="home-about-social">
             <h1>FIND ME ON</h1>
@@ -79,16 +73,7 @@ function Home2() {
                   <AiFillGithub />
                 </a>
               </li>
-              {/* <li className="social-icons">
-                <a
-                  href="https://twitter.com/Soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li> */}
+
               <li className="social-icons">
                 <a
                   href="https://www.linkedin.com/in/duta-gunawan/"
@@ -99,6 +84,7 @@ function Home2() {
                   <FaLinkedinIn />
                 </a>
               </li>
+
               <li className="social-icons">
                 <a
                   href="https://www.instagram.com/hello_duta/"
@@ -116,4 +102,5 @@ function Home2() {
     </Container>
   );
 }
+
 export default Home2;
