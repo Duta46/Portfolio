@@ -8,6 +8,10 @@ import muvii from "../../Assets/Projects/Muvii.png";
 import elearning from "../../Assets/Projects/E-learning.png";
 import AnimalCare from "../../Assets/Projects/AnimalCare.png";
 import kelontong from "../../Assets/Projects/Kelontong.png";
+import sapaAi from "../../Assets/Projects/SAPA AI.jpeg";
+import tcpc from "../../Assets/Projects/TCPC.jpeg";
+import ams from "../../Assets/Projects/AMS.png";
+import libBarcode from "../../Assets/Projects/Perpustakaan Barcode System.jpeg";
 import { useLanguage } from "../LanguageContext";
 import { motion } from "framer-motion";
 
@@ -20,6 +24,10 @@ function Projects() {
       subHeading: "Works",
       description: "A showcase of my projects across various technologies.",
       items: [
+        { imgPath: libBarcode, title: "Library Barcode System", description: "A digital library management system featuring barcode scanning for seamless book borrowing and inventory tracking. Streamlines administrative tasks and improves user experience for library members.", demoLink: "https://perpustakaansekolahfransiskuslawang.my.id/" },
+        { imgPath: ams, title: "AMS (Asset Management)", description: "Comprehensive Asset Management System developed for Kemenko PMK. It integrates State Asset Management and Rental modules, streamlining the tracking and utilization of governmental resources.", ghLink: "https://github.com/Duta46", demoLink: "https://ams-kemenkopmk.id/" },
+        { imgPath: tcpc, title: "TCPC", description: "Enterprise web application for a Japanese company. Focused on system optimization, data management, and providing a reliable digital infrastructure for international business operations.", ghLink: "https://github.com/Duta46", demoLink: "https://www.tcpc.co.jp/" },
+        { imgPath: sapaAi, title: "SAPA AI", description: "AI-powered application developed for Kemenko PMK. Features automated financial reporting and intelligent data analysis to streamline governmental workflows.", ghLink: "https://github.com/Duta46", demoLink: "https://sapa-ai.id/" },
         { imgPath: simkvi, title: "SIMKVI", description: "Integrated Monitoring System for faculty program heads at Unesa. Developed with Laravel, streamlining academic performance tracking.", ghLink: "https://github.com/Duta46/SIMKVI", demoLink: "https://simkvi.mi.unesa.ac.id/login" },
         { imgPath: ijts, title: "IJTS", description: "JFT Examination Practice Platform. Built with a robust Laravel backend for timed assessments.", ghLink: "https://github.com/Duta46/soal-sji", demoLink: "https://ijts.pt-sjigroup.com/" },
         { imgPath: KITAPTN, title: "KITAPTN", description: "UTBK Preparation Platform. Implemented the Fisher-Yates Shuffle algorithm for question randomization.", ghLink: "https://github.com/andarass/UTBK" },
@@ -35,6 +43,10 @@ function Projects() {
       subHeading: "Terbaru",
       description: "Kumpulan proyek yang telah saya kerjakan dengan berbagai teknologi.",
       items: [
+        { imgPath: libBarcode, title: "Sistem Barcode Perpustakaan", description: "Sistem manajemen perpustakaan digital dengan fitur pemindaian barcode untuk peminjaman buku dan pelacakan inventaris yang mulus. Mempercepat tugas administratif dan meningkatkan pengalaman anggota perpustakaan.", demoLink: "https://perpustakaansekolahfransiskuslawang.my.id/" },
+        { imgPath: ams, title: "AMS (Manajemen Aset)", description: "Sistem Manajemen Aset komprehensif yang dikembangkan untuk Kemenko PMK. Mengintegrasikan modul Manajemen Aset Negara dan modul Sewa, mempermudah pelacakan dan pemanfaatan sumber daya kementerian.", ghLink: "https://github.com/Duta46", demoLink: "https://ams-kemenkopmk.id/" },
+        { imgPath: tcpc, title: "TCPC", description: "Aplikasi web enterprise untuk perusahaan Jepang. Berfokus pada optimalisasi sistem, manajemen data, dan penyediaan infrastruktur digital yang andal untuk operasional bisnis internasional.", ghLink: "https://github.com/Duta46", demoLink: "https://www.tcpc.co.jp/" },
+        { imgPath: sapaAi, title: "SAPA AI", description: "Aplikasi berbasis AI yang dikembangkan untuk Kemenko PMK. Memiliki fitur pelaporan keuangan otomatis dan analisis data cerdas untuk mempermudah alur kerja kementerian.", ghLink: "https://github.com/Duta46", demoLink: "https://sapa-ai.id/" },
         { imgPath: simkvi, title: "SIMKVI", description: "Sistem Monitoring Terintegrasi untuk kepala program studi di Unesa. Dikembangkan dengan Laravel.", ghLink: "https://github.com/Duta46/SIMKVI", demoLink: "https://simkvi.mi.unesa.ac.id/login" },
         { imgPath: ijts, title: "IJTS", description: "Platform Latihan Ujian JFT. Dibangun dengan backend Laravel yang kokoh untuk simulasi ujian berwaktu.", ghLink: "https://github.com/Duta46/soal-sji", demoLink: "https://ijts.pt-sjigroup.com/" },
         { imgPath: KITAPTN, title: "KITAPTN", description: "Platform Persiapan UTBK. Mengimplementasikan algoritma Fisher-Yates Shuffle untuk pengacakan soal.", ghLink: "https://github.com/andarass/UTBK" },
