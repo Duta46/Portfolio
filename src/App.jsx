@@ -10,7 +10,7 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
+  Navigate,
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Particle from "./components/Particle";
@@ -40,7 +40,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/"/>} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </div>

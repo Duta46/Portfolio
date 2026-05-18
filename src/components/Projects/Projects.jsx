@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectCard from "./ProjectCards";
 import simkvi from "../../Assets/Projects/proyek_1.png";
 import ijts from "../../Assets/Projects/IJTS.png";
@@ -13,59 +13,305 @@ import tcpc from "../../Assets/Projects/TCPC.jpeg";
 import ams from "../../Assets/Projects/AMS.png";
 import libBarcode from "../../Assets/Projects/Perpustakaan Barcode System.jpeg";
 import parkirBarcode from "../../Assets/Projects/Parkir Barcode System.jpeg";
+// Placeholder for Android images if available, otherwise reuse or use generic
+import chatify from "../../Assets/Projects/chatify.png";
+import suicide from "../../Assets/Projects/suicide.png";
+
 import { useLanguage } from "../LanguageContext";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Projects() {
   const { language } = useLanguage();
+  const [filter, setFilter] = useState("all");
 
   const content = {
     en: {
       heading: "My Recent",
       subHeading: "Works",
       description: "A showcase of my projects across various technologies.",
+      categories: {
+        all: "All",
+        web: "Web App",
+        android: "Android App",
+      },
       items: [
-        { imgPath: parkirBarcode, title: "Parking Barcode System", description: "Automated parking management system utilizing barcode technology for efficient entry/exit tracking and secure vehicle management. Optimizes space utilization and provides real-time parking data.", ghLink: "https://github.com/Duta46" },
-        { imgPath: libBarcode, title: "Library Barcode System", description: "A digital library management system featuring barcode scanning for seamless book borrowing and inventory tracking. Streamlines administrative tasks and improves user experience for library members.", demoLink: "https://perpustakaansekolahfransiskuslawang.my.id/" },
-        { imgPath: ams, title: "AMS (Asset Management)", description: "Comprehensive Asset Management System developed for Kemenko PMK. It integrates State Asset Management and Rental modules, streamlining the tracking and utilization of governmental resources.", ghLink: "https://github.com/Duta46", demoLink: "https://ams-kemenkopmk.id/" },
-        { imgPath: tcpc, title: "TCPC", description: "Enterprise web application for a Japanese company. Focused on system optimization, data management, and providing a reliable digital infrastructure for international business operations.", ghLink: "https://github.com/Duta46", demoLink: "https://www.tcpc.co.jp/" },
-        { imgPath: sapaAi, title: "SAPA AI", description: "AI-powered application developed for Kemenko PMK. Features automated financial reporting and intelligent data analysis to streamline governmental workflows.", ghLink: "https://github.com/Duta46", demoLink: "https://sapa-ai.id/" },
-        { imgPath: simkvi, title: "SIMKVI", description: "Integrated Monitoring System for faculty program heads at Unesa. Developed with Laravel, streamlining academic performance tracking.", ghLink: "https://github.com/Duta46/SIMKVI", demoLink: "https://simkvi.mi.unesa.ac.id/login" },
-        { imgPath: ijts, title: "IJTS", description: "JFT Examination Practice Platform. Built with a robust Laravel backend for timed assessments.", ghLink: "https://github.com/Duta46/soal-sji", demoLink: "https://ijts.pt-sjigroup.com/" },
-        { imgPath: KITAPTN, title: "KITAPTN", description: "UTBK Preparation Platform. Implemented the Fisher-Yates Shuffle algorithm for question randomization.", ghLink: "https://github.com/andarass/UTBK" },
-        { imgPath: Japanify, title: "Japanify", description: "JLPT Simulation Web Application. Features include automated scoring and detailed result analysis.", ghLink: "https://github.com/Duta46/Japanify" },
-        { imgPath: muvii, title: "Muvii", description: "Premium Video Streaming Platform with Midtrans Payment integration.", ghLink: "https://github.com/Duta46/stream" },
-        { imgPath: elearning, title: "E-learning", description: "Web-based learning application with quiz modules and student management.", ghLink: "https://github.com/Duta46/E-learning", demoLink: "https://e-learning-duta46.vercel.app/" },
-        { imgPath: AnimalCare, title: "Animal Care", description: "Specialized pet care service interface focusing on high-quality UX/UI design.", ghLink: "https://github.com/Duta46/AnimalCare.git" },
-        { imgPath: kelontong, title: "Kelontong", description: "Responsive E-commerce platform focusing on intuitive product navigation.", ghLink: "https://github.com/Duta46/e-commerce_duta" }
-      ]
+        {
+          imgPath: parkirBarcode,
+          title: "Parking Barcode System",
+          description:
+            "Automated parking management system utilizing barcode technology for efficient entry/exit tracking and secure vehicle management. Optimizes space utilization and provides real-time parking data.",
+          ghLink: "https://github.com/Duta46",
+          category: "web",
+        },
+        {
+          imgPath: libBarcode,
+          title: "Library Barcode System",
+          description:
+            "A digital library management system featuring barcode scanning for seamless book borrowing and inventory tracking. Streamlines administrative tasks and improves user experience for library members.",
+          demoLink: "https://perpustakaansekolahfransiskuslawang.my.id/",
+          category: "web",
+        },
+        {
+          imgPath: ams,
+          title: "AMS (Asset Management)",
+          description:
+            "Comprehensive Asset Management System developed for Kemenko PMK. It integrates State Asset Management and Rental modules, streamlining the tracking and utilization of governmental resources.",
+          ghLink: "https://github.com/Duta46",
+          demoLink: "https://ams-kemenkopmk.id/",
+          category: "web",
+        },
+        {
+          imgPath: tcpc,
+          title: "TCPC",
+          description:
+            "Enterprise web application for a Japanese company. Focused on system optimization, data management, and providing a reliable digital infrastructure for international business operations.",
+          ghLink: "https://github.com/Duta46",
+          demoLink: "https://www.tcpc.co.jp/",
+          category: "web",
+        },
+        {
+          imgPath: sapaAi,
+          title: "SAPA AI",
+          description:
+            "AI-powered application developed for Kemenko PMK. Features automated financial reporting and intelligent data analysis to streamline governmental workflows.",
+          ghLink: "https://github.com/Duta46",
+          demoLink: "https://sapa-ai.id/",
+          category: "web",
+        },
+        {
+          imgPath: chatify,
+          title: "Chatify Android",
+          description:
+            "A real-time chat application for Android. Features include end-to-end encryption, media sharing, and group chats using Firebase.",
+          ghLink: "https://github.com/Duta46",
+          category: "android",
+        },
+        {
+          imgPath: suicide,
+          title: "Self-Detection App",
+          description:
+            "An Android application using machine learning to detect early signs of mental health issues and provide immediate resources for help.",
+          ghLink: "https://github.com/Duta46",
+          category: "android",
+        },
+        {
+          imgPath: simkvi,
+          title: "SIMKVI",
+          description:
+            "Integrated Monitoring System for faculty program heads at Unesa. Developed with Laravel, streamlining academic performance tracking.",
+          ghLink: "https://github.com/Duta46/SIMKVI",
+          demoLink: "https://simkvi.mi.unesa.ac.id/login",
+          category: "web",
+        },
+        {
+          imgPath: ijts,
+          title: "IJTS",
+          description:
+            "JFT Examination Practice Platform. Built with a robust Laravel backend for timed assessments.",
+          ghLink: "https://github.com/Duta46/soal-sji",
+          demoLink: "https://ijts.pt-sjigroup.com/",
+          category: "web",
+        },
+        {
+          imgPath: KITAPTN,
+          title: "KITAPTN",
+          description:
+            "UTBK Preparation Platform. Implemented the Fisher-Yates Shuffle algorithm for question randomization.",
+          ghLink: "https://github.com/andarass/UTBK",
+          category: "web",
+        },
+        {
+          imgPath: Japanify,
+          title: "Japanify",
+          description:
+            "JLPT Simulation Web Application. Features include automated scoring and detailed result analysis.",
+          ghLink: "https://github.com/Duta46/Japanify",
+          category: "web",
+        },
+        {
+          imgPath: muvii,
+          title: "Muvii",
+          description:
+            "Premium Video Streaming Platform with Midtrans Payment integration.",
+          ghLink: "https://github.com/Duta46/stream",
+          category: "web",
+        },
+        {
+          imgPath: elearning,
+          title: "E-learning",
+          description:
+            "Web-based learning application with quiz modules and student management.",
+          ghLink: "https://github.com/Duta46/E-learning",
+          demoLink: "https://e-learning-duta46.vercel.app/",
+          category: "web",
+        },
+        {
+          imgPath: AnimalCare,
+          title: "Animal Care",
+          description:
+            "Specialized pet care service interface focusing on high-quality UX/UI design.",
+          ghLink: "https://github.com/Duta46/AnimalCare.git",
+          category: "web",
+        },
+        {
+          imgPath: kelontong,
+          title: "Kelontong",
+          description:
+            "Responsive E-commerce platform focusing on intuitive product navigation.",
+          ghLink: "https://github.com/Duta46/e-commerce_duta",
+          category: "web",
+        },
+      ],
     },
     id: {
       heading: "Karya",
       subHeading: "Terbaru",
-      description: "Kumpulan proyek yang telah saya kerjakan dengan berbagai teknologi.",
+      description:
+        "Kumpulan proyek yang telah saya kerjakan dengan berbagai teknologi.",
+      categories: {
+        all: "Semua",
+        web: "Web App",
+        android: "Android App",
+      },
       items: [
-        { imgPath: parkirBarcode, title: "Sistem Barcode Parkir", description: "Sistem manajemen parkir otomatis yang memanfaatkan teknologi barcode untuk pelacakan masuk/keluar yang efisien dan pengelolaan kendaraan yang aman. Mengoptimalkan penggunaan lahan dan menyediakan data parkir real-time.", ghLink: "https://github.com/Duta46" },
-        { imgPath: libBarcode, title: "Sistem Barcode Perpustakaan", description: "Sistem manajemen perpustakaan digital dengan fitur pemindaian barcode untuk peminjaman buku dan pelacakan inventaris yang mulus. Mempercepat tugas administratif dan meningkatkan pengalaman anggota perpustakaan.", demoLink: "https://perpustakaansekolahfransiskuslawang.my.id/" },
-        { imgPath: ams, title: "AMS (Manajemen Aset)", description: "Sistem Manajemen Aset komprehensif yang dikembangkan untuk Kemenko PMK. Mengintegrasikan modul Manajemen Aset Negara dan modul Sewa, mempermudah pelacakan dan pemanfaatan sumber daya kementerian.", ghLink: "https://github.com/Duta46", demoLink: "https://ams-kemenkopmk.id/" },
-        { imgPath: tcpc, title: "TCPC", description: "Aplikasi web enterprise untuk perusahaan Jepang. Berfokus pada optimalisasi sistem, manajemen data, dan penyediaan infrastruktur digital yang andal untuk operasional bisnis internasional.", ghLink: "https://github.com/Duta46", demoLink: "https://www.tcpc.co.jp/" },
-        { imgPath: sapaAi, title: "SAPA AI", description: "Aplikasi berbasis AI yang dikembangkan untuk Kemenko PMK. Memiliki fitur pelaporan keuangan otomatis dan analisis data cerdas untuk mempermudah alur kerja kementerian.", ghLink: "https://github.com/Duta46", demoLink: "https://sapa-ai.id/" },
-        { imgPath: simkvi, title: "SIMKVI", description: "Sistem Monitoring Terintegrasi untuk kepala program studi di Unesa. Dikembangkan dengan Laravel.", ghLink: "https://github.com/Duta46/SIMKVI", demoLink: "https://simkvi.mi.unesa.ac.id/login" },
-        { imgPath: ijts, title: "IJTS", description: "Platform Latihan Ujian JFT. Dibangun dengan backend Laravel yang kokoh untuk simulasi ujian berwaktu.", ghLink: "https://github.com/Duta46/soal-sji", demoLink: "https://ijts.pt-sjigroup.com/" },
-        { imgPath: KITAPTN, title: "KITAPTN", description: "Platform Persiapan UTBK. Mengimplementasikan algoritma Fisher-Yates Shuffle untuk pengacakan soal.", ghLink: "https://github.com/andarass/UTBK" },
-        { imgPath: Japanify, title: "Japanify", description: "Aplikasi Web Simulasi JLPT. Fitur mencakup penilaian otomatis dan analisis hasil detail.", ghLink: "https://github.com/Duta46/Japanify" },
-        { imgPath: muvii, title: "Muvii", description: "Platform Streaming Video Premium dengan integrasi Payment Gateway Midtrans.", ghLink: "https://github.com/Duta46/stream" },
-        { imgPath: elearning, title: "E-learning", description: "Aplikasi pembelajaran berbasis web mencakup modul kuis dan manajemen siswa.", ghLink: "https://github.com/Duta46/E-learning", demoLink: "https://e-learning-duta46.vercel.app/" },
-        { imgPath: AnimalCare, title: "Animal Care", description: "Antarmuka layanan perawatan hewan peliharaan berfokus pada desain UX/UI.", ghLink: "https://github.com/Duta46/AnimalCare.git" },
-        { imgPath: kelontong, title: "Kelontong", description: "Platform E-commerce responsif berfokus pada navigasi produk yang intuitif.", ghLink: "https://github.com/Duta46/e-commerce_duta" }
-      ]
-    }
+        {
+          imgPath: parkirBarcode,
+          title: "Sistem Barcode Parkir",
+          description:
+            "Sistem manajemen parkir otomatis yang memanfaatkan teknologi barcode untuk pelacakan masuk/keluar yang efisien dan pengelolaan kendaraan yang aman. Mengoptimalkan penggunaan lahan dan menyediakan data parkir real-time.",
+          ghLink: "https://github.com/Duta46",
+          category: "web",
+        },
+        {
+          imgPath: libBarcode,
+          title: "Sistem Barcode Perpustakaan",
+          description:
+            "Sistem manajemen perpustakaan digital dengan fitur pemindaian barcode untuk peminjaman buku dan pelacakan inventaris yang mulus. Mempercepat tugas administratif dan meningkatkan pengalaman anggota perpustakaan.",
+          demoLink: "https://perpustakaansekolahfransiskuslawang.my.id/",
+          category: "web",
+        },
+        {
+          imgPath: ams,
+          title: "AMS (Manajemen Aset)",
+          description:
+            "Sistem Manajemen Aset komprehensif yang dikembangkan untuk Kemenko PMK. Mengintegrasikan modul Manajemen Aset Negara dan modul Sewa, mempermudah pelacakan dan pemanfaatan sumber daya kementerian.",
+          ghLink: "https://github.com/Duta46",
+          demoLink: "https://ams-kemenkopmk.id/",
+          category: "web",
+        },
+        {
+          imgPath: tcpc,
+          title: "TCPC",
+          description:
+            "Aplikasi web enterprise untuk perusahaan Jepang. Berfokus pada optimalisasi sistem, manajemen data, dan penyediaan infrastruktur digital yang andal untuk operasional bisnis internasional.",
+          ghLink: "https://github.com/Duta46",
+          demoLink: "https://www.tcpc.co.jp/",
+          category: "web",
+        },
+        {
+          imgPath: sapaAi,
+          title: "SAPA AI",
+          description:
+            "Aplikasi berbasis AI yang dikembangkan untuk Kemenko PMK. Memiliki fitur pelaporan keuangan otomatis dan analisis data cerdas untuk mempermudah alur kerja kementerian.",
+          ghLink: "https://github.com/Duta46",
+          demoLink: "https://sapa-ai.id/",
+          category: "web",
+        },
+        {
+          imgPath: chatify,
+          title: "Chatify Android",
+          description:
+            "Aplikasi chat real-time untuk Android. Fitur mencakup enkripsi end-to-end, berbagi media, dan grup chat menggunakan Firebase.",
+          ghLink: "https://github.com/Duta46",
+          category: "android",
+        },
+        {
+          imgPath: suicide,
+          title: "Aplikasi Deteksi Dini",
+          description:
+            "Aplikasi Android menggunakan machine learning untuk mendeteksi tanda-tanda awal masalah kesehatan mental dan menyediakan sumber daya bantuan.",
+          ghLink: "https://github.com/Duta46",
+          category: "android",
+        },
+        {
+          imgPath: simkvi,
+          title: "SIMKVI",
+          description:
+            "Sistem Monitoring Terintegrasi untuk kepala program studi di Unesa. Dikembangkan dengan Laravel.",
+          ghLink: "https://github.com/Duta46/SIMKVI",
+          demoLink: "https://simkvi.mi.unesa.ac.id/login",
+          category: "web",
+        },
+        {
+          imgPath: ijts,
+          title: "IJTS",
+          description:
+            "Platform Latihan Ujian JFT. Dibangun dengan backend Laravel yang kokoh untuk simulasi ujian berwaktu.",
+          ghLink: "https://github.com/Duta46/soal-sji",
+          demoLink: "https://ijts.pt-sjigroup.com/",
+          category: "web",
+        },
+        {
+          imgPath: KITAPTN,
+          title: "KITAPTN",
+          description:
+            "Platform Persiapan UTBK. Mengimplementasikan algoritma Fisher-Yates Shuffle untuk pengacakan soal.",
+          ghLink: "https://github.com/andarass/UTBK",
+          category: "web",
+        },
+        {
+          imgPath: Japanify,
+          title: "Japanify",
+          description:
+            "Aplikasi Web Simulasi JLPT. Fitur mencakup penilaian otomatis dan analisis hasil detail.",
+          ghLink: "https://github.com/Duta46/Japanify",
+          category: "web",
+        },
+        {
+          imgPath: muvii,
+          title: "Muvii",
+          description:
+            "Platform Streaming Video Premium dengan integrasi Payment Gateway Midtrans.",
+          ghLink: "https://github.com/Duta46/stream",
+          category: "web",
+        },
+        {
+          imgPath: elearning,
+          title: "E-learning",
+          description:
+            "Aplikasi pembelajaran berbasis web mencakup modul kuis dan manajemen siswa.",
+          ghLink: "https://github.com/Duta46/E-learning",
+          demoLink: "https://e-learning-duta46.vercel.app/",
+          category: "web",
+        },
+        {
+          imgPath: AnimalCare,
+          title: "Animal Care",
+          description:
+            "Antarmuka layanan perawatan hewan peliharaan berfokus pada desain UX/UI.",
+          ghLink: "https://github.com/Duta46/AnimalCare.git",
+          category: "web",
+        },
+        {
+          imgPath: kelontong,
+          title: "Kelontong",
+          description:
+            "Platform E-commerce responsif berfokus pada navigasi produk yang intuitif.",
+          ghLink: "https://github.com/Duta46/e-commerce_duta",
+          category: "web",
+        },
+      ],
+    },
   };
 
   const t = content[language];
 
+  const filteredItems = t.items.filter(
+    (item) => filter === "all" || item.category === filter
+  );
+
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto space-y-16">
+    <section className="py-24 px-6 max-w-7xl mx-auto space-y-12">
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">
           {t.heading} <span className="text-gradient">{t.subHeading}</span>
@@ -74,21 +320,42 @@ function Projects() {
         <div className="w-20 h-1 bg-primary mx-auto mt-6 rounded-full" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {t.items.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
+      {/* Filter Tabs */}
+      <div className="flex justify-center gap-4">
+        {Object.entries(t.categories).map(([key, label]) => (
+          <button
+            key={key}
+            onClick={() => setFilter(key)}
+            className={`px-6 py-2 rounded-full font-bold transition-all duration-300 ${
+              filter === key
+                ? "bg-primary text-white shadow-lg shadow-primary/20"
+                : "glass-panel text-slate-400 hover:text-white"
+            }`}
           >
-            <ProjectCard {...project} />
-          </motion.div>
+            {label}
+          </button>
         ))}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <AnimatePresence mode="popLayout">
+          {filteredItems.map((project, index) => (
+            <motion.div
+              key={project.title}
+              layout
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.4 }}
+            >
+              <ProjectCard {...project} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </section>
   );
 }
 
 export default Projects;
+

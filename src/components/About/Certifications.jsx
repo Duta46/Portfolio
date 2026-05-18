@@ -16,24 +16,30 @@ function Certifications() {
           title: "Microsoft Training Graduation",
           company: "Microsoft x Kemenko PMK",
           duration: "2025",
-          description: "Completed specialized technical training provided by Microsoft in collaboration with Kemenko PMK.",
-          certLink: "https://drive.google.com/file/d/1g9oI2LjWznAE38_Zse20bIxqutqmUb7K/view"
+          description:
+            "Completed specialized technical training provided by Microsoft in collaboration with Kemenko PMK.",
+          certLink:
+            "https://drive.google.com/file/d/1g9oI2LjWznAE38_Zse20bIxqutqmUb7K/view",
         },
         {
           title: "Cloud & Generative AI Fundamentals",
           company: "AWS x Dicoding Indonesia",
           duration: "2024",
-          description: "Learned the core concepts of AWS Cloud infrastructure and the fundamentals of Generative AI.",
-          certLink: "https://drive.google.com/file/d/1haVaRqQb-F4t8ufBOZUzzNX3F6xAEJ4n/view"
+          description:
+            "Learned the core concepts of AWS Cloud infrastructure and the fundamentals of Generative AI.",
+          certLink:
+            "https://drive.google.com/file/d/1haVaRqQb-F4t8ufBOZUzzNX3F6xAEJ4n/view",
         },
         {
           title: "Assistant Mentor",
           company: "Ruang Guru",
           duration: "2024",
-          description: "Served as an Assistant Mentor at Ruang Guru, contributing to student guidance and educational development.",
-          certLink: "https://drive.google.com/file/d/1ZbOTNTpwjIAmx21-5zaPq-uM2nW2j6qo/view"
-        }
-      ]
+          description:
+            "Served as an Assistant Mentor at Ruang Guru, contributing to student guidance and educational development.",
+          certLink:
+            "https://drive.google.com/file/d/1ZbOTNTpwjIAmx21-5zaPq-uM2nW2j6qo/view",
+        },
+      ],
     },
     id: {
       heading: "Sertifikasi &",
@@ -44,25 +50,31 @@ function Certifications() {
           title: "Kelulusan Pelatihan Microsoft",
           company: "Microsoft x Kemenko PMK",
           duration: "2025",
-          description: "Menyelesaikan pelatihan teknis khusus yang diselenggarakan oleh Microsoft berkolaborasi dengan Kemenko PMK.",
-          certLink: "https://drive.google.com/file/d/1g9oI2LjWznAE38_Zse20bIxqutqmUb7K/view"
+          description:
+            "Menyelesaikan pelatihan teknis khusus yang diselenggarakan oleh Microsoft berkolaborasi dengan Kemenko PMK.",
+          certLink:
+            "https://drive.google.com/file/d/1g9oI2LjWznAE38_Zse20bIxqutqmUb7K/view",
         },
         {
           title: "Dasar Cloud & Generative AI",
           company: "AWS x Dicoding Indonesia",
           duration: "2024",
-          description: "Mempelajari konsep inti infrastruktur AWS Cloud dan dasar-dasar Generative AI.",
-          certLink: "https://drive.google.com/file/d/1haVaRqQb-F4t8ufBOZUzzNX3F6xAEJ4n/view"
+          description:
+            "Mempelajari konsep inti infrastruktur AWS Cloud dan dasar-dasar Generative AI.",
+          certLink:
+            "https://drive.google.com/file/d/1haVaRqQb-F4t8ufBOZUzzNX3F6xAEJ4n/view",
         },
         {
           title: "Asisten Mentor",
           company: "Ruang Guru",
           duration: "2024",
-          description: "Bertugas sebagai Asisten Mentor di Ruang Guru, berkontribusi dalam bimbingan siswa dan pengembangan pendidikan.",
-          certLink: "https://drive.google.com/file/d/1ZbOTNTpwjIAmx21-5zaPq-uM2nW2j6qo/view"
-        }
-      ]
-    }
+          description:
+            "Bertugas sebagai Asisten Mentor di Ruang Guru, berkontribusi dalam bimbingan siswa dan pengembangan pendidikan.",
+          certLink:
+            "https://drive.google.com/file/d/1ZbOTNTpwjIAmx21-5zaPq-uM2nW2j6qo/view",
+        },
+      ],
+    },
   };
 
   const t = content[language];
@@ -85,10 +97,7 @@ function Certifications() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            <ExperienceCard
-              {...item}
-              btnText={t.viewCert}
-            />
+            <ExperienceCard {...item} btnText={t.viewCert} />
           </motion.div>
         ))}
       </div>

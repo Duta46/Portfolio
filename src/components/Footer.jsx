@@ -4,11 +4,23 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
   const year = new Date().getFullYear();
-  
+
   const socialLinks = [
-    { icon: <AiFillGithub size={20} />, href: "https://github.com/Duta46", label: "GitHub" },
-    { icon: <FaLinkedinIn size={20} />, href: "https://www.linkedin.com/in/duta-gunawan/", label: "LinkedIn" },
-    { icon: <AiFillInstagram size={20} />, href: "https://www.instagram.com/hello_duta/", label: "Instagram" }
+    {
+      icon: <AiFillGithub size={20} />,
+      href: "https://github.com/Duta46",
+      label: "GitHub",
+    },
+    {
+      icon: <FaLinkedinIn size={20} />,
+      href: "https://www.linkedin.com/in/duta-gunawan/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <AiFillInstagram size={20} />,
+      href: "https://www.instagram.com/hello_duta/",
+      label: "Instagram",
+    },
   ];
 
   return (
@@ -16,7 +28,8 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <p className="text-slate-400 font-medium">
-            Designed & Developed by <span className="text-white">Duta Alif Gunawan</span>
+            Designed & Developed by{" "}
+            <span className="text-white">Duta Alif Gunawan</span>
           </p>
           <p className="text-slate-500 text-sm mt-1">
             Copyright © {year} • All Rights Reserved

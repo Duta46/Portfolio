@@ -14,13 +14,14 @@ import {
   SiTailwindcss,
   SiBootstrap,
   SiMysql,
+  SiN8N,
 } from "react-icons/si";
 import { useLanguage } from "../LanguageContext";
 import { motion } from "framer-motion";
 
 function Techstack() {
   const { language } = useLanguage();
-  
+
   const content = {
     en: {
       backend: "Backend & Languages",
@@ -31,7 +32,7 @@ function Techstack() {
       backend: "Backend & Bahasa",
       frontend: "Frontend & Desain",
       database: "Infrastruktur & DB",
-    }
+    },
   };
 
   const t = content[language];
@@ -44,7 +45,7 @@ function Techstack() {
         { icon: <DiJavascript1 />, name: "JavaScript" },
         { icon: <DiNodejs />, name: "Node.js" },
         { icon: <DiPython />, name: "Python" },
-      ]
+      ],
     },
     {
       title: t.frontend,
@@ -52,7 +53,7 @@ function Techstack() {
         { icon: <DiReact />, name: "React" },
         { icon: <SiTailwindcss />, name: "Tailwind" },
         { icon: <SiBootstrap />, name: "Bootstrap" },
-      ]
+      ],
     },
     {
       title: t.database,
@@ -61,16 +62,19 @@ function Techstack() {
         { icon: <SiPostgresql />, name: "PostgreSQL" },
         { icon: <SiRedis />, name: "Redis" },
         { icon: <FaAws />, name: "AWS" },
+        { icon: <SiN8N />, name: "n8n" },
         { icon: <DiGit />, name: "Git" },
-      ]
-    }
+      ],
+    },
   ];
 
   return (
     <div className="space-y-16">
       {stacks.map((group, idx) => (
         <div key={idx} className="space-y-6">
-          <h3 className="text-xl font-bold text-slate-400 text-center md:text-left">{group.title}</h3>
+          <h3 className="text-xl font-bold text-slate-400 text-center md:text-left">
+            {group.title}
+          </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {group.icons.map((item, i) => (
               <motion.div

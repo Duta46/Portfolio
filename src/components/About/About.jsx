@@ -13,7 +13,7 @@ function About() {
     <section className="py-24 px-6 max-w-7xl mx-auto space-y-24">
       {/* Hero Section */}
       <div className="grid md:grid-cols-2 gap-12 items-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -21,23 +21,24 @@ function About() {
           className="order-2 md:order-1"
         >
           <h1 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tighter uppercase">
-          Get to know <span className="text-gradient">Me</span>
+            Get to know <span className="text-gradient">Me</span>
           </h1>
           <div className="glass-panel p-8">
-          <AboutCard />
-          </div>        </motion.div>
-        
-        <motion.div 
+            <AboutCard />
+          </div>{" "}
+        </motion.div>
+
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="order-1 md:order-2 flex justify-center"
         >
-          <img 
-            src={laptopImg} 
-            alt="about" 
-            className="w-full max-w-md drop-shadow-2xl animate-float" 
+          <img
+            src={laptopImg}
+            alt="about"
+            className="w-full max-w-md drop-shadow-2xl animate-float"
           />
         </motion.div>
       </div>

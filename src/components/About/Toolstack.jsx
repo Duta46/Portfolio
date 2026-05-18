@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  SiPostman,
-  SiNpm,
-  SiVercel,
-} from "react-icons/si";
+import { SiPostman, SiNpm, SiVercel } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { FaWindows } from "react-icons/fa";
 import { motion } from "framer-motion";

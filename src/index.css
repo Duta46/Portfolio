@@ -3,19 +3,20 @@
 @theme {
   --color-background: #020617;
   --color-surface: rgba(15, 23, 42, 0.6);
-  
+
   --color-primary: #8b5cf6;
   --color-primary-hover: #7c3aed;
-  
+
   --color-secondary: #38bdf8;
   --color-secondary-hover: #0ea5e9;
-  
+
   --color-accent: #c084fc;
 
   --blur-glass: 12px;
 
   @keyframes gradient-x {
-    0%, 100% {
+    0%,
+    100% {
       background-size: 200% 200%;
       background-position: left center;
     }
@@ -26,8 +27,13 @@
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
 
   --animate-gradient-x: gradient-x 15s ease infinite;
@@ -37,7 +43,11 @@
 @layer base {
   body {
     @apply bg-background text-slate-200 antialiased selection:bg-primary/30;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
   }
 }
 
@@ -46,7 +56,9 @@
   backdrop-filter: blur(var(--blur-glass));
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 @utility glass-nav {
@@ -61,7 +73,11 @@
 @utility text-gradient {
   background-clip: text;
   color: transparent;
-  background-image: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-accent)
+  );
 }
 
 @utility btn-glass {
@@ -78,11 +94,11 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  
+
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
-  
+
   &:active {
     scale: 0.95;
   }

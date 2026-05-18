@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 
 function Github() {
   const { language } = useLanguage();
-  
+
   // Handle potential ESM/CJS interop issues with default export
   const GitHubCalendarComp = GitHubCalendar.default || GitHubCalendar;
-  
+
   const title = {
     en: { first: "Days I", last: "Code" },
-    id: { first: "Hari-hari Saya", last: "Coding" }
+    id: { first: "Hari-hari Saya", last: "Coding" },
   };
 
   const t = title[language];
@@ -27,7 +27,7 @@ function Github() {
 
       <div className="glass-panel p-8 flex flex-col items-center gap-12">
         <div className="w-full overflow-x-auto flex justify-center py-4">
-          {typeof GitHubCalendarComp === 'function' ? (
+          {typeof GitHubCalendarComp === "function" ? (
             <GitHubCalendarComp
               username="Duta46"
               blockSize={12}
@@ -35,11 +35,11 @@ function Github() {
               color="#8b5cf6"
               fontSize={14}
               theme={{
-                level0: '#1e293b',
-                level1: '#4c1d95',
-                level2: '#6d28d9',
-                level3: '#7c3aed',
-                level4: '#8b5cf6',
+                level0: "#1e293b",
+                level1: "#4c1d95",
+                level2: "#6d28d9",
+                level3: "#7c3aed",
+                level4: "#8b5cf6",
               }}
             />
           ) : (
@@ -48,20 +48,14 @@ function Github() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 w-full">
-          <motion.div 
-            whileHover={{ y: -5 }}
-            className="flex justify-center"
-          >
+          <motion.div whileHover={{ y: -5 }} className="flex justify-center">
             <img
               src="https://github-readme-stats-tau-beige.vercel.app/api?username=Duta46&show_icons=true&theme=dracula&title_color=8b5cf6&icon_color=8b5cf6&text_color=cbd5e1&bg_color=0f172a&hide_border=true"
               alt="GitHub Stats"
               className="w-full max-w-[450px] rounded-xl shadow-2xl shadow-black/50"
             />
           </motion.div>
-          <motion.div 
-            whileHover={{ y: -5 }}
-            className="flex justify-center"
-          >
+          <motion.div whileHover={{ y: -5 }} className="flex justify-center">
             <img
               src="https://github-readme-stats-tau-beige.vercel.app/api/top-langs?username=Duta46&layout=compact&theme=dracula&title_color=38bdf8&icon_color=38bdf8&text_color=cbd5e1&bg_color=0f172a&hide_border=true"
               alt="Top Languages"

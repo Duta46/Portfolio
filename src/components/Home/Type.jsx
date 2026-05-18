@@ -4,20 +4,20 @@ import { useLanguage } from "../LanguageContext";
 
 function Type() {
   const { language } = useLanguage();
-  
+
   const strings = {
     en: [
       "Software Developer",
       "Laravel Specialist",
       "React Enthusiast",
-      "Lifelong Learner"
+      "Lifelong Learner",
     ],
     id: [
       "Pengembang Perangkat Lunak",
       "Spesialis Laravel",
       "Pecinta React",
-      "Pembelajar Sejati"
-    ]
+      "Pembelajar Sejati",
+    ],
   };
 
   return (
@@ -28,7 +28,7 @@ function Type() {
         loop: true,
         deleteSpeed: 50,
         wrapperClassName: "text-gradient",
-        cursorClassName: "text-primary"
+        cursorClassName: "text-primary",
       }}
     />
   );
