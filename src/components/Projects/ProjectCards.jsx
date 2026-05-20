@@ -7,24 +7,49 @@ function ProjectCard(props) {
 
   return (
     <div className="glass-panel h-full flex flex-col overflow-hidden group hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
-      <div className="relative overflow-hidden aspect-video">
-        <img
-          src={props.imgPath}
-          alt={props.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+      {/* Device Frame Container */}
+      <div className="p-4 bg-black/20 flex items-center justify-center overflow-hidden">
+        {isAndroid ? (
+          /* Phone Frame */
+          <div className="relative w-[200px] aspect-[9/19] bg-slate-900 rounded-[3rem] border-[6px] border-slate-800 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+            {/* Notch */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-slate-800 rounded-b-2xl z-20" />
+            <img
+              src={props.imgPath}
+              alt={props.title}
+              className="w-full h-full object-cover"
+            />
+            {/* Glossy Effect */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+          </div>
+        ) : (
+          /* Laptop Frame */
+          <div className="w-full max-w-[280px] group-hover:scale-105 transition-transform duration-500">
+            {/* Screen */}
+            <div className="relative aspect-video bg-slate-900 rounded-t-lg border-[4px] border-slate-800 overflow-hidden shadow-xl">
+              <img
+                src={props.imgPath}
+                alt={props.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Keyboard Base */}
+            <div className="h-2 bg-slate-700 rounded-b-lg relative mx-[-10px] shadow-lg">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-slate-600 rounded-full" />
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-black text-white mb-3 group-hover:text-primary transition-colors">
           {props.title}
         </h3>
-        <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow text-justify">
+        <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow text-justify line-clamp-4">
           {props.description}
         </p>
 
-        <div className="flex gap-3">
+        <div className="flex gap-3 mt-auto">
           <a
             href={props.ghLink}
             target="_blank"
@@ -51,4 +76,3 @@ function ProjectCard(props) {
 }
 
 export default ProjectCard;
-

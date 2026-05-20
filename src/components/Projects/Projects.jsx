@@ -13,9 +13,9 @@ import tcpc from "../../Assets/Projects/TCPC.jpeg";
 import ams from "../../Assets/Projects/AMS.png";
 import libBarcode from "../../Assets/Projects/Perpustakaan Barcode System.jpeg";
 import parkirBarcode from "../../Assets/Projects/Parkir Barcode System.jpeg";
-// Placeholder for Android images if available, otherwise reuse or use generic
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
+import alpukatPintar from "../../Assets/Projects/Aplikasi Alpukat Pintar.jpeg";
+import dompetDigital from "../../Assets/Projects/Aplikasi Dompet Digital.jpeg";
+import quranApp from "../../Assets/Projects/Aplikasi Quran.jpeg";
 
 import { useLanguage } from "../LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -79,18 +79,26 @@ function Projects() {
           category: "web",
         },
         {
-          imgPath: chatify,
-          title: "Chatify Android",
+          imgPath: alpukatPintar,
+          title: "Alpukat Pintar",
           description:
-            "A real-time chat application for Android. Features include end-to-end encryption, media sharing, and group chats using Firebase.",
+            "A Flutter-based mobile application integrated with TensorFlow Deep Learning to analyze avocado ripeness levels (raw, ripe, overripe) using computer vision.",
           ghLink: "https://github.com/Duta46",
           category: "android",
         },
         {
-          imgPath: suicide,
-          title: "Self-Detection App",
+          imgPath: dompetDigital,
+          title: "Digital Wallet with AI",
           description:
-            "An Android application using machine learning to detect early signs of mental health issues and provide immediate resources for help.",
+            "A modern digital wallet application featuring an AI-powered chatbot that helps users analyze their finances and manage expenses intelligently.",
+          ghLink: "https://github.com/Duta46",
+          category: "android",
+        },
+        {
+          imgPath: quranApp,
+          title: "Quran Application",
+          description:
+            "A mobile Quran application designed for easy reading and accessibility, providing a seamless spiritual experience on Android devices.",
           ghLink: "https://github.com/Duta46",
           category: "android",
         },
@@ -218,18 +226,26 @@ function Projects() {
           category: "web",
         },
         {
-          imgPath: chatify,
-          title: "Chatify Android",
+          imgPath: alpukatPintar,
+          title: "Alpukat Pintar",
           description:
-            "Aplikasi chat real-time untuk Android. Fitur mencakup enkripsi end-to-end, berbagi media, dan grup chat menggunakan Firebase.",
+            "Aplikasi mobile berbasis Flutter yang terintegrasi dengan TensorFlow Deep Learning untuk menganalisa tingkat kematangan buah alpukat (mentah, matang, kematangan) menggunakan computer vision.",
           ghLink: "https://github.com/Duta46",
           category: "android",
         },
         {
-          imgPath: suicide,
-          title: "Aplikasi Deteksi Dini",
+          imgPath: dompetDigital,
+          title: "Dompet Digital AI",
           description:
-            "Aplikasi Android menggunakan machine learning untuk mendeteksi tanda-tanda awal masalah kesehatan mental dan menyediakan sumber daya bantuan.",
+            "Aplikasi dompet digital modern yang dilengkapi dengan chatbot AI untuk membantu pengguna menganalisa keuangan dan mengelola pengeluaran secara cerdas.",
+          ghLink: "https://github.com/Duta46",
+          category: "android",
+        },
+        {
+          imgPath: quranApp,
+          title: "Aplikasi Quran",
+          description:
+            "Aplikasi Quran mobile yang dirancang untuk kemudahan membaca dan aksesibilitas, memberikan pengalaman spiritual yang mulus pada perangkat Android.",
           ghLink: "https://github.com/Duta46",
           category: "android",
         },
@@ -358,4 +374,3 @@ function Projects() {
 }
 
 export default Projects;
-

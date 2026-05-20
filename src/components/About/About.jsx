@@ -6,6 +6,7 @@ import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
 import Experience from "../Experience/Experience";
 import Certifications from "./Certifications";
+import Publications from "./Publications";
 import { motion } from "framer-motion";
 
 function About() {
@@ -76,6 +77,7 @@ function About() {
         </motion.div>
 
         <Experience />
+        <Publications />
         <Certifications />
         <Github />
       </div>
