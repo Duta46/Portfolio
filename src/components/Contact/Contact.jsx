@@ -27,7 +27,7 @@ function Contact() {
       sendBtn: "Send Message",
       resumeBtn: "Download CV",
       infoTitle: "Contact Information",
-      successMsg: "Message sent! I'll get back to you soon.",
+      successMsg: "Redirecting to WhatsApp...",
     },
     id: {
       title: "Hubungi",
@@ -42,7 +42,7 @@ function Contact() {
       sendBtn: "Kirim Pesan",
       resumeBtn: "Unduh CV",
       infoTitle: "Informasi Kontak",
-      successMsg: "Pesan terkirim! Saya akan segera menghubungi Anda.",
+      successMsg: "Mengarahkan ke WhatsApp...",
     },
   };
 
@@ -50,7 +50,12 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(t.successMsg);
+    
+    const phoneNumber = "628953393333737"; // International format for 08953393333737
+    const messageBody = `Hello, My name is ${formData.name} (${formData.email}).\n\nSubject: ${formData.subject}\n\nMessage: ${formData.message}`;
+    const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageBody)}`;
+    
+    window.open(waUrl, "_blank");
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
@@ -82,7 +87,7 @@ function Contact() {
                     Email
                   </p>
                   <p className="text-white font-medium">
-                    duta.alif@example.com
+                    dutagunawan544@gmail.com
                   </p>
                 </div>
               </div>
