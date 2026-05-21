@@ -18,6 +18,7 @@ function ProjectCard(props) {
               src={props.imgPath}
               alt={props.title}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
             {/* Glossy Effect */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -31,6 +32,7 @@ function ProjectCard(props) {
                 src={props.imgPath}
                 alt={props.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             {/* Keyboard Base */}
@@ -45,6 +47,19 @@ function ProjectCard(props) {
         <h3 className="text-xl font-black text-white mb-3 group-hover:text-primary transition-colors">
           {props.title}
         </h3>
+        
+        {/* Technology Tags */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {props.technologies && props.technologies.map((tech, index) => (
+            <span 
+              key={index}
+              className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-white/5 border border-white/10 text-slate-400 rounded-md"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
         <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow text-justify line-clamp-4">
           {props.description}
         </p>

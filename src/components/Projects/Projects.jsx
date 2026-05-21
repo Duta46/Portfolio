@@ -42,6 +42,7 @@ function Projects() {
             "Automated parking management system utilizing barcode technology for efficient entry/exit tracking and secure vehicle management. Optimizes space utilization and provides real-time parking data.",
           ghLink: "https://github.com/Duta46",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         },
         {
           imgPath: libBarcode,
@@ -50,6 +51,7 @@ function Projects() {
             "A digital library management system featuring barcode scanning for seamless book borrowing and inventory tracking. Streamlines administrative tasks and improves user experience for library members.",
           demoLink: "https://perpustakaansekolahfransiskuslawang.my.id/",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         },
         {
           imgPath: ams,
@@ -59,6 +61,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46",
           demoLink: "https://ams-kemenkopmk.id/",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         },
         {
           imgPath: tcpc,
@@ -68,6 +71,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46",
           demoLink: "https://www.tcpc.co.jp/",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         },
         {
           imgPath: sapaAi,
@@ -77,6 +81,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46",
           demoLink: "https://sapa-ai.id/",
           category: "web",
+          technologies: ["Laravel", "Python", "OpenAI", "MySQL"],
         },
         {
           imgPath: alpukatPintar,
@@ -85,6 +90,7 @@ function Projects() {
             "A Flutter-based mobile application integrated with TensorFlow Deep Learning to analyze avocado ripeness levels (raw, ripe, overripe) using computer vision.",
           ghLink: "https://github.com/Duta46",
           category: "android",
+          technologies: ["Flutter", "TensorFlow", "Dart", "Python"],
         },
         {
           imgPath: dompetDigital,
@@ -93,6 +99,7 @@ function Projects() {
             "A modern digital wallet application featuring an AI-powered chatbot that helps users analyze their finances and manage expenses intelligently.",
           ghLink: "https://github.com/Duta46",
           category: "android",
+          technologies: ["Flutter", "Dart", "OpenAI"],
         },
         {
           imgPath: quranApp,
@@ -101,6 +108,7 @@ function Projects() {
             "A mobile Quran application designed for easy reading and accessibility, providing a seamless spiritual experience on Android devices.",
           ghLink: "https://github.com/Duta46",
           category: "android",
+          technologies: ["Flutter", "Dart"],
         },
         {
           imgPath: simkvi,
@@ -110,6 +118,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46/SIMKVI",
           demoLink: "https://simkvi.mi.unesa.ac.id/login",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL"],
         },
         {
           imgPath: ijts,
@@ -119,6 +128,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46/soal-sji",
           demoLink: "https://ijts.pt-sjigroup.com/",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL"],
         },
         {
           imgPath: KITAPTN,
@@ -127,6 +137,7 @@ function Projects() {
             "UTBK Preparation Platform. Implemented the Fisher-Yates Shuffle algorithm for question randomization.",
           ghLink: "https://github.com/andarass/UTBK",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL", "JavaScript"],
         },
         {
           imgPath: Japanify,
@@ -135,6 +146,7 @@ function Projects() {
             "JLPT Simulation Web Application. Features include automated scoring and detailed result analysis.",
           ghLink: "https://github.com/Duta46/Japanify",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL"],
         },
         {
           imgPath: muvii,
@@ -143,6 +155,7 @@ function Projects() {
             "Premium Video Streaming Platform with Midtrans Payment integration.",
           ghLink: "https://github.com/Duta46/stream",
           category: "web",
+          technologies: ["Laravel", "PHP", "Midtrans", "MySQL"],
         },
         {
           imgPath: elearning,
@@ -152,6 +165,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46/E-learning",
           demoLink: "https://e-learning-duta46.vercel.app/",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL"],
         },
         {
           imgPath: AnimalCare,
@@ -160,6 +174,7 @@ function Projects() {
             "Specialized pet care service interface focusing on high-quality UX/UI design.",
           ghLink: "https://github.com/Duta46/AnimalCare.git",
           category: "web",
+          technologies: ["React.js", "Tailwind CSS", "Framer Motion"],
         },
         {
           imgPath: kelontong,
@@ -168,6 +183,7 @@ function Projects() {
             "Responsive E-commerce platform focusing on intuitive product navigation.",
           ghLink: "https://github.com/Duta46/e-commerce_duta",
           category: "web",
+          technologies: ["React.js", "Tailwind CSS"],
         },
       ],
     },
@@ -189,6 +205,7 @@ function Projects() {
             "Sistem manajemen parkir otomatis yang memanfaatkan teknologi barcode untuk pelacakan masuk/keluar yang efisien dan pengelolaan kendaraan yang aman. Mengoptimalkan penggunaan lahan dan menyediakan data parkir real-time.",
           ghLink: "https://github.com/Duta46",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         },
         {
           imgPath: libBarcode,
@@ -197,6 +214,7 @@ function Projects() {
             "Sistem manajemen perpustakaan digital dengan fitur pemindaian barcode untuk peminjaman buku dan pelacakan inventaris yang mulus. Mempercepat tugas administratif dan meningkatkan pengalaman anggota perpustakaan.",
           demoLink: "https://perpustakaansekolahfransiskuslawang.my.id/",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         },
         {
           imgPath: ams,
@@ -206,6 +224,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46",
           demoLink: "https://ams-kemenkopmk.id/",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         },
         {
           imgPath: tcpc,
@@ -215,6 +234,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46",
           demoLink: "https://www.tcpc.co.jp/",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         },
         {
           imgPath: sapaAi,
@@ -224,6 +244,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46",
           demoLink: "https://sapa-ai.id/",
           category: "web",
+          technologies: ["Laravel", "Python", "OpenAI", "MySQL"],
         },
         {
           imgPath: alpukatPintar,
@@ -232,6 +253,7 @@ function Projects() {
             "Aplikasi mobile berbasis Flutter yang terintegrasi dengan TensorFlow Deep Learning untuk menganalisa tingkat kematangan buah alpukat (mentah, matang, kematangan) menggunakan computer vision.",
           ghLink: "https://github.com/Duta46",
           category: "android",
+          technologies: ["Flutter", "TensorFlow", "Dart", "Python"],
         },
         {
           imgPath: dompetDigital,
@@ -240,6 +262,7 @@ function Projects() {
             "Aplikasi dompet digital modern yang dilengkapi dengan chatbot AI untuk membantu pengguna menganalisa keuangan dan mengelola pengeluaran secara cerdas.",
           ghLink: "https://github.com/Duta46",
           category: "android",
+          technologies: ["Flutter", "Dart", "OpenAI"],
         },
         {
           imgPath: quranApp,
@@ -248,6 +271,7 @@ function Projects() {
             "Aplikasi Quran mobile yang dirancang untuk kemudahan membaca dan aksesibilitas, memberikan pengalaman spiritual yang mulus pada perangkat Android.",
           ghLink: "https://github.com/Duta46",
           category: "android",
+          technologies: ["Flutter", "Dart"],
         },
         {
           imgPath: simkvi,
@@ -257,6 +281,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46/SIMKVI",
           demoLink: "https://simkvi.mi.unesa.ac.id/login",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL"],
         },
         {
           imgPath: ijts,
@@ -266,6 +291,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46/soal-sji",
           demoLink: "https://ijts.pt-sjigroup.com/",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL"],
         },
         {
           imgPath: KITAPTN,
@@ -274,6 +300,7 @@ function Projects() {
             "Platform Persiapan UTBK. Mengimplementasikan algoritma Fisher-Yates Shuffle untuk pengacakan soal.",
           ghLink: "https://github.com/andarass/UTBK",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL", "JavaScript"],
         },
         {
           imgPath: Japanify,
@@ -282,6 +309,7 @@ function Projects() {
             "Aplikasi Web Simulasi JLPT. Fitur mencakup penilaian otomatis dan analisis hasil detail.",
           ghLink: "https://github.com/Duta46/Japanify",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL"],
         },
         {
           imgPath: muvii,
@@ -290,6 +318,7 @@ function Projects() {
             "Platform Streaming Video Premium dengan integrasi Payment Gateway Midtrans.",
           ghLink: "https://github.com/Duta46/stream",
           category: "web",
+          technologies: ["Laravel", "PHP", "Midtrans", "MySQL"],
         },
         {
           imgPath: elearning,
@@ -299,6 +328,7 @@ function Projects() {
           ghLink: "https://github.com/Duta46/E-learning",
           demoLink: "https://e-learning-duta46.vercel.app/",
           category: "web",
+          technologies: ["Laravel", "PHP", "MySQL"],
         },
         {
           imgPath: AnimalCare,
@@ -307,6 +337,7 @@ function Projects() {
             "Antarmuka layanan perawatan hewan peliharaan berfokus pada desain UX/UI.",
           ghLink: "https://github.com/Duta46/AnimalCare.git",
           category: "web",
+          technologies: ["React.js", "Tailwind CSS", "Framer Motion"],
         },
         {
           imgPath: kelontong,
@@ -315,6 +346,7 @@ function Projects() {
             "Platform E-commerce responsif berfokus pada navigasi produk yang intuitif.",
           ghLink: "https://github.com/Duta46/e-commerce_duta",
           category: "web",
+          technologies: ["React.js", "Tailwind CSS"],
         },
       ],
     },

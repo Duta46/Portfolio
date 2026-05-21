@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLanguage } from "../LanguageContext";
 import { Download, Send, Mail, MapPin, Phone } from "lucide-react";
 import pdf from "../../Assets/CV_New.pdf";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Contact() {
   const { language } = useLanguage();
@@ -12,6 +12,8 @@ function Contact() {
     subject: "",
     message: "",
   });
+  const [isSending, setIsSending] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const content = {
     en: {
@@ -50,13 +52,19 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSending(true);
     
     const phoneNumber = "628953393333737"; // International format for 08953393333737
     const messageBody = `Hello, My name is ${formData.name} (${formData.email}).\n\nSubject: ${formData.subject}\n\nMessage: ${formData.message}`;
     const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageBody)}`;
     
-    window.open(waUrl, "_blank");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setTimeout(() => {
+      window.open(waUrl, "_blank");
+      setIsSending(false);
+      setShowSuccess(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setShowSuccess(false), 5000);
+    }, 800);
   };
 
   return (
@@ -122,14 +130,28 @@ function Contact() {
           animate={{ opacity: 1, x: 0 }}
           className="md:col-span-7"
         >
-          <div className="glass-panel p-8 md:p-12">
+          <div className="glass-panel p-8 md:p-12 relative overflow-hidden">
+            <AnimatePresence>
+              {showSuccess && (
+                <motion.div 
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -50, opacity: 0 }}
+                  className="absolute top-0 left-0 right-0 bg-green-500 text-white py-3 text-center text-sm font-bold z-10"
+                >
+                  {t.successMsg}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+                  <label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
                     {t.labels.name}
                   </label>
                   <input
+                    id="name"
                     type="text"
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary focus:bg-white/10 transition-all"
@@ -141,10 +163,11 @@ function Contact() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+                  <label htmlFor="email" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
                     {t.labels.email}
                   </label>
                   <input
+                    id="email"
                     type="email"
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary focus:bg-white/10 transition-all"
@@ -157,10 +180,11 @@ function Contact() {
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+                <label htmlFor="subject" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
                   {t.labels.subject}
                 </label>
                 <input
+                  id="subject"
                   type="text"
                   required
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary focus:bg-white/10 transition-all"
@@ -172,10 +196,11 @@ function Contact() {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
+                <label htmlFor="message" className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">
                   {t.labels.message}
                 </label>
                 <textarea
+                  id="message"
                   rows="5"
                   required
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary focus:bg-white/10 transition-all resize-none"
@@ -188,9 +213,15 @@ function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full py-5 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-black uppercase tracking-[0.2em] shadow-xl hover:shadow-primary/20 hover:scale-[1.02] transition-all flex items-center justify-center gap-3"
+                disabled={isSending}
+                className={`w-full py-5 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-black uppercase tracking-[0.2em] shadow-xl hover:shadow-primary/20 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 ${isSending ? "opacity-70 cursor-not-allowed" : ""}`}
               >
-                <Send size={20} /> {t.sendBtn}
+                {isSending ? (
+                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                ) : (
+                  <Send size={20} />
+                )}
+                {isSending ? "Processing..." : t.sendBtn}
               </button>
             </form>
           </div>
