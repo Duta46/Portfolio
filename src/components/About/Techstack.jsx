@@ -6,7 +6,7 @@ import {
   DiPython,
   DiGit,
 } from "react-icons/di";
-import { FaAws } from "react-icons/fa";
+import { FaAws, FaDocker } from "react-icons/fa";
 import {
   SiLaravel,
   SiPostgresql,
@@ -15,6 +15,9 @@ import {
   SiBootstrap,
   SiMysql,
   SiN8N,
+  SiCodeigniter,
+  SiNextdotjs,
+  SiDocker,
 } from "react-icons/si";
 import { useLanguage } from "../LanguageContext";
 import { motion } from "framer-motion";
@@ -42,6 +45,7 @@ function Techstack() {
       title: t.backend,
       icons: [
         { icon: <SiLaravel />, name: "Laravel" },
+        { icon: <SiCodeigniter />, name: "CodeIgniter" },
         { icon: <DiJavascript1 />, name: "JavaScript" },
         { icon: <DiNodejs />, name: "Node.js" },
         { icon: <DiPython />, name: "Python" },
@@ -51,6 +55,7 @@ function Techstack() {
       title: t.frontend,
       icons: [
         { icon: <DiReact />, name: "React" },
+        { icon: <SiNextdotjs />, name: "Next.js" },
         { icon: <SiTailwindcss />, name: "Tailwind" },
         { icon: <SiBootstrap />, name: "Bootstrap" },
       ],
@@ -62,6 +67,7 @@ function Techstack() {
         { icon: <SiPostgresql />, name: "PostgreSQL" },
         { icon: <SiRedis />, name: "Redis" },
         { icon: <FaAws />, name: "AWS" },
+        { icon: <SiDocker />, name: "Docker" },
         { icon: <SiN8N />, name: "n8n" },
         { icon: <DiGit />, name: "Git" },
       ],

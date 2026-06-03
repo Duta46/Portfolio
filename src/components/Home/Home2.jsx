@@ -19,14 +19,14 @@ function Home2() {
           efficient backend systems.
           <br />
           <br />
-          I've mastered languages like
+          I've mastered languages and frameworks like
           <span className="text-secondary font-bold">
             {" "}
-            PHP (Laravel), JavaScript (React.js), and Python.
+            PHP (Laravel, CodeIgniter), JavaScript (React.js, Next.js), Python, and Docker.
           </span>
           <br />
-          <br />I specialize in the{" "}
-          <span className="text-accent font-bold">Laravel Ecosystem</span>,
+          <br />I specialize in{" "}
+          <span className="text-accent font-bold">Full-stack Development</span>,
           building secure, robust, and high-performance applications for diverse
           clients.
         </>
@@ -48,12 +48,12 @@ function Home2() {
           Saya menguasai teknologi seperti
           <span className="text-secondary font-bold">
             {" "}
-            PHP (Laravel), JavaScript (React.js), dan Python.
+            PHP (Laravel, CodeIgniter), JavaScript (React.js, Next.js), Python, dan Docker.
           </span>
           <br />
           <br />
           Saya berspesialisasi dalam{" "}
-          <span className="text-accent font-bold">Ekosistem Laravel</span>,
+          <span className="text-accent font-bold">Pengembangan Full-stack</span>,
           membangun aplikasi aman dan berperforma tinggi untuk berbagai klien.
         </>
       ),

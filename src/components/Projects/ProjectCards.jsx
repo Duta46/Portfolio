@@ -1,6 +1,6 @@
 import React from "react";
-import { FaGithub, FaPlay } from "react-icons/fa";
-import { CgWebsite } from "react-icons/cg";
+import { Link } from "react-router-dom";
+import { FaInfoCircle } from "react-icons/fa";
 
 function ProjectCard(props) {
   const isAndroid = props.category === "android";
@@ -64,26 +64,13 @@ function ProjectCard(props) {
           {props.description}
         </p>
 
-        <div className="flex gap-3 mt-auto">
-          <a
-            href={props.ghLink}
-            target="_blank"
-            rel="noreferrer"
-            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 hover:text-white transition-all font-bold text-xs uppercase tracking-widest"
+        <div className="mt-auto">
+          <Link
+            to={`/project/${props.id}`}
+            className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-primary text-white hover:bg-primary/80 transition-all font-bold text-xs uppercase tracking-widest shadow-lg shadow-primary/20"
           >
-            <FaGithub size={14} /> GitHub
-          </a>
-          {props.demoLink && (
-            <a
-              href={props.demoLink}
-              target="_blank"
-              rel="noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-primary/20 border border-primary/30 text-primary hover:bg-primary hover:text-white transition-all font-bold text-xs uppercase tracking-widest"
-            >
-              {isAndroid ? <FaPlay size={12} /> : <CgWebsite size={14} />}
-              {isAndroid ? "Play Store" : "Live Demo"}
-            </a>
-          )}
+            <FaInfoCircle size={14} /> View Details
+          </Link>
         </div>
       </div>
     </div>
