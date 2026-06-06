@@ -11,6 +11,9 @@ import kelontong from "../../Assets/Projects/Kelontong.png";
 import sapaAi from "../../Assets/Projects/SAPA AI.jpeg";
 import tcpc from "../../Assets/Projects/TCPC.jpeg";
 import ams from "../../Assets/Projects/AMS.png";
+import amsDashboard from "../../Assets/Projects/Asset Management System/Dashboard.png";
+import amsAsetBMN from "../../Assets/Projects/Asset Management System/Aset BMN.png";
+import amsPeminjaman from "../../Assets/Projects/Asset Management System/Peminjaman.png";
 import libBarcode from "../../Assets/Projects/Perpustakaan Barcode System.jpeg";
 import parkirBarcode from "../../Assets/Projects/Parkir Barcode System.jpeg";
 import alpukatPintar from "../../Assets/Projects/Aplikasi Alpukat Pintar.jpeg";
@@ -61,6 +64,7 @@ export const projectContent = {
         demoLink: "https://ams-kemenkopmk.id/",
         category: "web",
         technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+        gallery: [amsDashboard, amsAsetBMN, amsPeminjaman],
       },
       {
         id: "tcpc",
@@ -240,6 +244,7 @@ export const projectContent = {
         demoLink: "https://ams-kemenkopmk.id/",
         category: "web",
         technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+        gallery: [amsDashboard, amsAsetBMN, amsPeminjaman],
       },
       {
         id: "tcpc",

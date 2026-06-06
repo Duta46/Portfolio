@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { projectContent } from "./Projects";
 import { useLanguage } from "../LanguageContext";
-import { motion } from "framer-motion";
-import { FaGithub, FaPlay, FaArrowLeft } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub, FaPlay, FaArrowLeft, FaTimes } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
 
 function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { language } = useLanguage();
+  const [selectedImg, setSelectedImg] = useState(null);
   
   const t = projectContent[language];
   const project = t.items.find((item) => item.id === id);
@@ -129,6 +130,77 @@ function ProjectDetail() {
           </div>
         </div>
       </div>
+
+      {/* Project Gallery */}
+      {project.gallery && project.gallery.length > 0 && (
+        <div className="mt-20 space-y-8">
+          <div className="flex items-center gap-4">
+            <h3 className="text-2xl font-bold text-white uppercase tracking-widest">
+              {language === "en" ? "Project Gallery" : "Galeri Proyek"}
+            </h3>
+            <div className="flex-1 h-px bg-white/10" />
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {project.gallery.map((img, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.02 }}
+                onClick={() => setSelectedImg(img)}
+                className="glass-panel p-4 overflow-hidden group cursor-pointer"
+              >
+                <div className="relative aspect-video rounded-lg overflow-hidden border border-white/10">
+                  <img
+                    src={img}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white text-xs font-bold uppercase tracking-widest border border-white/20">
+                      {language === "en" ? "View Image" : "Lihat Gambar"}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImg(null)}
+            className="fixed inset-0 z-[9999] bg-slate-950/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-7xl w-full h-full flex items-center justify-center"
+            >
+              <img
+                src={selectedImg}
+                alt="Project Screenshot Full"
+                className="max-w-full max-h-full object-contain rounded-xl shadow-2xl border border-white/10"
+              />
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImg(null);
+                }}
+                className="absolute top-0 right-0 md:-top-12 md:-right-12 p-3 text-white/50 hover:text-white transition-colors"
+              >
+                <FaTimes size={32} />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.section>
   );
 }
