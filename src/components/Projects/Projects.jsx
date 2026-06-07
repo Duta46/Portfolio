@@ -14,6 +14,9 @@ import ams from "../../Assets/Projects/AMS.png";
 import amsDashboard from "../../Assets/Projects/Asset Management System/Dashboard.png";
 import amsAsetBMN from "../../Assets/Projects/Asset Management System/Aset BMN.png";
 import amsPeminjaman from "../../Assets/Projects/Asset Management System/Peminjaman.png";
+import spp1 from "../../Assets/Projects/SPP/WhatsApp Image 2026-06-07 at 08.06.38.jpeg";
+import spp2 from "../../Assets/Projects/SPP/WhatsApp Image 2026-06-07 at 08.07.10.jpeg";
+import spp3 from "../../Assets/Projects/SPP/WhatsApp Image 2026-06-07 at 08.07.59.jpeg";
 import libBarcode from "../../Assets/Projects/Perpustakaan Barcode System.jpeg";
 import parkirBarcode from "../../Assets/Projects/Parkir Barcode System.jpeg";
 import alpukatPintar from "../../Assets/Projects/Aplikasi Alpukat Pintar.jpeg";
@@ -65,6 +68,17 @@ export const projectContent = {
         category: "web",
         technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         gallery: [amsDashboard, amsAsetBMN, amsPeminjaman],
+      },
+      {
+        id: "spp-tk",
+        imgPath: spp1,
+        title: "SPP TK (Kindergarten Payment System)",
+        description:
+          "A kindergarten payment management system (SPP) built to streamline the tracking and administration of student tuition fees. It provides a structured interface for managing payments, students, and financial records.",
+        ghLink: "https://github.com/Duta46",
+        category: "web",
+        technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+        gallery: [spp1, spp2, spp3],
       },
       {
         id: "tcpc",
@@ -245,6 +259,17 @@ export const projectContent = {
         category: "web",
         technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
         gallery: [amsDashboard, amsAsetBMN, amsPeminjaman],
+      },
+      {
+        id: "spp-tk",
+        imgPath: spp1,
+        title: "SPP TK (Sistem Pembayaran Sekolah)",
+        description:
+          "Sistem manajemen pembayaran sekolah TK (SPP) yang dibangun untuk mempermudah pelacakan dan administrasi biaya spp siswa. Menyediakan antarmuka terstruktur untuk mengelola pembayaran, siswa, dan catatan keuangan.",
+        ghLink: "https://github.com/Duta46",
+        category: "web",
+        technologies: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+        gallery: [spp1, spp2, spp3],
       },
       {
         id: "tcpc",
